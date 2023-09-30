@@ -4,14 +4,19 @@ export const carouselData = {
   interval: 5000,
   slidesData: [
     {
-      title: "First Slide",
-      content: "I am the first Slide.",
-      image: "/vite.svg",
+      title: "Projekty",
+      content: "Stwórz nowy pierwszy projekt lub dołącz do istniejącego.",
+      image: "/coding.jpg",
     },
     {
-      title: "Second Slide",
-      content: "I am the second Slide.",
-      image: "/vite.svg",
+      title: "Mentorzy",
+      content: "Zostań mentorem i pomagaj innym tworzyć projekty.",
+      image: "/mentor.jpg",
     },
+    {
+      title: "Grupy",
+      content: "Dołącz do grupy i pracujcie razem nad projektem.",
+      image: "/friends.jpg",
+    }
   ],
 };

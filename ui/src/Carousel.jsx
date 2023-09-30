@@ -1,4 +1,4 @@
-import { Card, CardContent, CardHeader, CardMedia } from "@mui/material";
+import { Card, CardContent, CardHeader } from "@mui/material";
 import {
   ButtonBack,
   ButtonNext,
@@ -29,10 +29,20 @@ export default function Carousel({
       <Slider>
         {slidesData.map((item, index) => (
           <>
-            <Slide index={index}>
-              <Card variant="outlined">
-                <CardMedia component="img" image={item.image} />
-                <CardHeader title={item.title} />
+            <Slide
+              index={index}
+              style={{
+                backgroundImage: `url(${item.image})`,
+                backgroundSize: "cover",
+              }}
+            >
+              <Card
+                variant="outlined"
+                sx={{ margin: "10rem 30rem 10rem 5rem", maxWidth: "40%" }}
+              >
+                <CardHeader
+                  title={item.title}
+                />
                 <CardContent>{item.content}</CardContent>
               </Card>
             </Slide>
