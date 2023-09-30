@@ -27,3 +27,19 @@ def delete_project(db: Session, project_id: int):
     db.query(models.Project).filter(models.Project.id == project_id).delete()
     db.commit()
     return {"message": "Project deleted"}
+
+
+def get_users(db: Session):
+    return db.query(models.User).all()
+
+
+def get_user_by_email(db: Session, email: str):
+    return db.query(models.User).filter(models.User.email == email).first()
+
+
+def create_user(db: Session, user: schemas.User):
+    db_user = models.User(**user.model_dump())
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user

@@ -21,10 +21,13 @@ class ProjectOut(Project):
 
 
 class User(BaseModel):
-    id: int
     fullname: str
     email: str
     username: str
     projects: List[Project] = None
     role: str
+
+
+class UserFromDB(User):
+    id: int
     created_at: str
