@@ -1,13 +1,14 @@
 import {useLoaderData} from "react-router-dom";
 import {ProjectsService} from "../../services/projects.js";
+import {Stack} from "@mui/material";
+import {ProjectCard} from "../../components/Cards/ProjectCard/ProjectCard.jsx";
 
 export function Projects() {
     const projects = useLoaderData();
-    console.log(projects);
     return (
-        <div>
-        <h1>Projects</h1>
-        </div>
+        <Stack gap="20px" padding="20px">
+            {projects.map((params) => <ProjectCard key={params.id} {...params} />)}
+        </Stack>
     )
 }
 
