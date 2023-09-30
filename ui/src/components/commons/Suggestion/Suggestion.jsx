@@ -13,7 +13,8 @@ export const Suggestion = ({ children }) => {
       sx={{
         display: "flex",
         flexDirection: "row",
-        border: "1px solid black",
+        border: `2px solid ${theme.colors.black}`,
+        borderRadius: "4px",
         padding: "10px 20px",
       }}
     >

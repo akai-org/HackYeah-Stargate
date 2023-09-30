@@ -1,4 +1,4 @@
-import { Box, Typography, Link } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import { CourseTrayItem } from "./CourseTrayItem";
 
 /** @jsxImportSource @emotion/react */
@@ -18,7 +18,7 @@ export const CourseTray = ({ title, courses }) => {
         gutterBottom
         sx={{
           display: "inline-block",
-          marginBottom: "24px",
+          marginTop: "24px",
           "&::after": {
             display: "block",
             content: '""',
@@ -54,9 +54,9 @@ export const CourseTray = ({ title, courses }) => {
           justify-content: flex-end;
         `}
       >
-        <Link href="#" sx={{ marginTop: "20px" }}>
+        <Button variant="text" sx={{ marginTop: "20px" }}>
           Zobacz więcej
-        </Link>
+        </Button>
       </div>
     </Box>
   );

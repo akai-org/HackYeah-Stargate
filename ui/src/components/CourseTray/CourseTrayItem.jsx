@@ -26,7 +26,12 @@ export const CourseTrayItem = ({
   return (
     <Card
       variant="outlined"
-      sx={{ width: "200px", height: "282px", border: 0 }}
+      sx={{
+        width: "200px",
+        height: "282px",
+        border: 0,
+        boxShadow: "4px 4px 20px -4px rgba(66, 68, 90, 1)",
+      }}
     >
       <img
         src={image || placeholder}
