@@ -1,13 +1,23 @@
 from typing import List
 from pydantic import BaseModel
+from datetime import datetime
 
 
 class Project(BaseModel):
-    id: int
     title: str
     description: str
-    owner_id: int = None
-    created_at: str
+    owner_id: int
+    photo: str = None
+    tags: List[str] = None
+
+
+class ProjectCreate(Project):
+    pass
+
+
+class ProjectOut(Project):
+    id: int
+    created_at: datetime
 
 
 class User(BaseModel):
