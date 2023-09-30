@@ -16,7 +16,6 @@ class User(Base):
     email: Mapped[str] = mapped_column(String)
 
 
-
 class Project(Base):
     __tablename__ = "projects"
 
