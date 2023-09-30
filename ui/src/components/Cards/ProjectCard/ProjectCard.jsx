@@ -3,7 +3,7 @@ import default_project_image from '../../../assets/images/default_project_photo.
 import Typography from "@mui/material/Typography";
 import {tagsColorsMap} from "../../../utils/tagsColorsMap.js";
 
-export function ProjectCard({title, description, photo, id, tags}) {
+export function ProjectCard({title, description, photo, tags}) {
     return <Card sx={{width: '350px'}}>
         <CardMedia
             sx={{ height: 280 }} image={photo || default_project_image} />
