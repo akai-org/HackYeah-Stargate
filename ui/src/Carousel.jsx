@@ -28,7 +28,7 @@ export default function Carousel({
       isPlaying={isPlaying}
       infinite={true}
     >
-      {showTitle&&<h2>{carouselTitle}</h2>}
+      {showTitle && <h2>{carouselTitle}</h2>}
       <Slider>
         {slidesData.map((item, index) => (
           <>
@@ -51,8 +51,8 @@ export default function Carousel({
         ))}
       </Slider>
       {dots && <DotGroup />}
-      {buttons && <ButtonBack>Back</ButtonBack> && (
-        <ButtonNext>Next</ButtonNext>
+      {buttons && <ButtonBack>{"<"}</ButtonBack> && (
+        <ButtonNext>{">"}</ButtonNext>
       )}
     </CarouselProvider>
   );
