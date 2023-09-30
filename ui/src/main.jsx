@@ -1,9 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import { ThemeProvider } from "@mui/material";
 import { GlobalStyles } from "@mui/system";
+import { CssBaseline, ThemeProvider } from "@mui/material";
 import theme from "./assets/theme";
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <ThemeProvider theme={theme}>
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         h5: { fontSize: "1.125rem" },
       }}
     />
+    <CssBaseline />
     <App />
   </ThemeProvider>
 );

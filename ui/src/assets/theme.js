@@ -30,6 +30,15 @@ const theme = createTheme({
       fontSize: "1.125rem",
     },
   },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        textDecoration: "none",
+        fontFamily: "Roboto",
+        underlineHover: "none",
+      }
+    }
+  }
 });
 
 export default theme;
