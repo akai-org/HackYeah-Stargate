@@ -11,9 +11,12 @@ import "pure-react-carousel/dist/react-carousel.es.css";
 import PropTypes from "prop-types";
 
 export default function Carousel({
+  showTitle,
   carouselTitle,
   isPlaying,
   interval,
+  dots,
+  buttons,
   slidesData,
 }) {
   return (
@@ -25,7 +28,7 @@ export default function Carousel({
       isPlaying={isPlaying}
       infinite={true}
     >
-      <h2>{carouselTitle}</h2>
+      {showTitle&&<h2>{carouselTitle}</h2>}
       <Slider>
         {slidesData.map((item, index) => (
           <>
@@ -40,25 +43,27 @@ export default function Carousel({
                 variant="outlined"
                 sx={{ margin: "10rem 30rem 10rem 5rem", maxWidth: "40%" }}
               >
-                <CardHeader
-                  title={item.title}
-                />
+                <CardHeader title={item.title} />
                 <CardContent>{item.content}</CardContent>
               </Card>
             </Slide>
           </>
         ))}
       </Slider>
-      <DotGroup />
-      <ButtonBack>Back</ButtonBack>
-      <ButtonNext>Next</ButtonNext>
+      {dots && <DotGroup />}
+      {buttons && <ButtonBack>Back</ButtonBack> && (
+        <ButtonNext>Next</ButtonNext>
+      )}
     </CarouselProvider>
   );
 }
 
 Carousel.propTypes = {
+  showTitle: PropTypes.bool.isRequired,
   carouselTitle: PropTypes.string.isRequired,
   isPlaying: PropTypes.bool.isRequired,
   interval: PropTypes.number.isRequired,
+  dots: PropTypes.bool.isRequired,
+  buttons: PropTypes.bool.isRequired,
   slidesData: PropTypes.array.isRequired,
 };

@@ -1,7 +1,10 @@
 export const carouselData = {
-  carouselTitle: "Carousel",
+  showTitle:false,
+  carouselTitle: "",
   isPlaying: true,
   interval: 5000,
+  dots: false,
+  buttons: false,
   slidesData: [
     {
       title: "Projekty",
