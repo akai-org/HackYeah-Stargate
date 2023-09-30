@@ -29,7 +29,7 @@ export function LandingPage() {
                     sx={{
                         mr: 2,
                         display: { xs: 'none', md: 'flex' },
-                        fontFamily: 'monospace',
+                        fontFamily: 'Roboto',
                         fontWeight: 700,
                         letterSpacing: '.3rem',
                         color: 'inherit',
@@ -49,7 +49,7 @@ export function LandingPage() {
                         mr: 2,
                         display: { xs: 'flex', md: 'none' },
                         flexGrow: 1,
-                        fontFamily: 'monospace',
+                        fontFamily: 'Roboto',
                         fontWeight: 700,
                         letterSpacing: '.3rem',
                         color: 'inherit',

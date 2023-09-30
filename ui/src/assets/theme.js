@@ -11,7 +11,24 @@ const theme = createTheme({
     secondary: "#F5C687",
     white: "#FEFEFE",
     black: "#121212",
-    grey: "#B3B9CF",
+    grey: "#A3A9BF",
+  },
+  typography: {
+    h1: {
+      fontSize: "2.25rem",
+    },
+    h2: {
+      fontSize: "1.75rem",
+    },
+    h3: {
+      fontSize: "1.5rem",
+    },
+    h4: {
+      fontSize: "1.25rem",
+    },
+    h5: {
+      fontSize: "1.125rem",
+    },
   },
 });
 
