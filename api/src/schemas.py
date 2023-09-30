@@ -6,9 +6,12 @@ from datetime import datetime
 class Project(BaseModel):
     title: str
     description: str
+    long_description: List[str] = None
     owner_id: int
     photo: str = None
     tags: List[str] = None
+    what_to_learn: List[str] = None
+    contents: List[str] = None
 
 
 class ProjectCreate(Project):
@@ -24,10 +27,9 @@ class User(BaseModel):
     fullname: str
     email: str
     username: str
-    projects: List[Project] = None
     role: str
 
 
 class UserFromDB(User):
     id: int
-    created_at: str
+    created_at: datetime
