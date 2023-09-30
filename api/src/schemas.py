@@ -6,12 +6,12 @@ from datetime import datetime
 class Project(BaseModel):
     title: str
     description: str
-    long_description: List[str] = None
-    owner_id: int
+    long_description: str = None
     photo: str = None
     tags: List[str] = None
     what_to_learn: List[str] = None
     contents: List[str] = None
+    owner_id: int
 
 
 class ProjectCreate(Project):
