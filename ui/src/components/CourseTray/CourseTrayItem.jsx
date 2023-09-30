@@ -26,7 +26,7 @@ export const CourseTrayItem = ({
   return (
     <Card
       variant="outlined"
-      sx={{ width: "240px", height: "282px", border: 0 }}
+      sx={{ width: "200px", height: "282px", border: 0 }}
     >
       <img
         src={image || placeholder}
