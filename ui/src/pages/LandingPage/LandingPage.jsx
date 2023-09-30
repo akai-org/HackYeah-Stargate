@@ -6,9 +6,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
-import { Link } from "react-router-dom";
-import MuiLink from '@mui/material/Link';
+import {useNavigate} from "react-router-dom";
 import AdbIcon from '@mui/icons-material/Adb';
+import {Button} from "@mui/material";
 
 const links = [
     {label: 'Hackathony', href: '/hackathons'},
@@ -17,6 +17,8 @@ const links = [
 ]
 
 export function LandingPage() {
+    const navigate = useNavigate();
+
     return (<AppBar position="static">
         <Container maxWidth="xl">
             <Toolbar disableGutters>
@@ -61,14 +63,13 @@ export function LandingPage() {
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },
                     justifyContent: 'flex-end', gap: '20px', paddingRight: '20px' }}>
                     {links.map(({label, href}) => (
-                        <MuiLink
-                            component={Link}
-                            to={href}
+                        <Button
+                            onClick={() => navigate(href)}
                             key={href}
                             sx={{ my: 2, color: 'white', display: 'block' }}
                         >
                             {label}
-                        </MuiLink>
+                        </Button>
                     ))}
                 </Box>
 

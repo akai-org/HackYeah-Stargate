@@ -13,6 +13,15 @@ const theme = createTheme({
     black: "#121212",
     grey: "#B3B9CF",
   },
+  components: {
+    MuiLink: {
+      styleOverrides: {
+        textDecoration: "none",
+        fontFamily: "Roboto",
+        underlineHover: "none",
+      }
+    }
+  }
 });
 
 export default theme;
