@@ -70,3 +70,29 @@ def delete_course(db: Session, course_id: int):
     db.query(models.Course).filter(models.Course.id == course_id).delete()
     db.commit()
     return {"message": "Course deleted"}
+
+
+def get_hackathon(db: Session, hackathon_id: int):
+    return db.query(models.Hackathon).filter(models.Hackathon.id == hackathon_id).first()
+
+
+def get_hackathon_by_title(db: Session, title: str):
+    return db.query(models.Hackathon).filter(models.Hackathon.title == title).first()
+
+
+def get_hackathons(db: Session):
+    return db.query(models.Hackathon).all()
+
+
+def create_hackathon(db: Session, hackathon: schemas.Hackathon):
+    db_hackathon = models.Hackathon(**hackathon.model_dump())
+    db.add(db_hackathon)
+    db.commit()
+    db.refresh(db_hackathon)
+    return db_hackathon
+
+
+def delete_hackathon(db: Session, hackathon_id: int):
+    db.query(models.Hackathon).filter(models.Hackathon.id == hackathon_id).delete()
+    db.commit()
+    return {"message": "Hackathon deleted"}
