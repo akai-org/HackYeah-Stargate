@@ -33,3 +33,22 @@ class User(BaseModel):
 class UserFromDB(User):
     id: int
     created_at: datetime
+
+
+class Course(BaseModel):
+    title: str
+    image: str
+    author: str
+    level: int
+
+
+class CourseCreate(Course):
+    pass
+
+
+class CourseOut(Course):
+    id: str
+    rating: float
+    rating_count: int
+    tags: List[str]
+    created_at: datetime
