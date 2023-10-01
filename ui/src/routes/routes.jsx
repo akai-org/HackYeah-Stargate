@@ -6,6 +6,10 @@ import { Courses } from "../pages/Courses/Courses.jsx";
 import { CourseDetails } from "../pages/CourseDetails/CourseDetails.jsx";
 import { Hackatons } from "../pages/Hackatons/Hackatons.jsx";
 import { HackathonDetails } from "../pages/HackathonDetails/HackathonDetails.jsx";
+import {
+  ProjectDetails,
+  projectDetailsLoader,
+} from "../pages/ProjectDetails/ProjectDetails.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +18,11 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <LandingPage /> },
       { path: "/projects", element: <Projects />, loader: projectsLoader },
+      {
+        path: "/projects/:id",
+        element: <ProjectDetails />,
+        loader: projectDetailsLoader,
+      },
       {
         path: "/courses",
         element: <Courses />,

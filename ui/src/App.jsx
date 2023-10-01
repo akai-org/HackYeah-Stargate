@@ -6,7 +6,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <RouterProvider fallbackElement={<div>Loading...</div>} router={router} />;
 }
 
 export default App;
