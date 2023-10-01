@@ -67,7 +67,7 @@ export function CustomAppBar() {
             }}
           >
             {links.map(({ label, href }) => (
-              <Button
+              <Button disabled={href === "/projects"}
                 onClick={() => navigate(href)}
                 key={href}
                 sx={{ my: 2, color: "white", display: "block" }}
