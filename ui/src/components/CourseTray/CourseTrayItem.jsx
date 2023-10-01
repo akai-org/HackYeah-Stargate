@@ -2,6 +2,7 @@ import { Typography, Card, Rating } from "@mui/material";
 import placeholder from "./../../assets/images/course-placeholder.jpg";
 import { useTheme } from "@mui/system";
 import { TechIcon } from "../commons/TechIcon/TechIcon";
+import { useNavigate } from "react-router-dom";
 
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
@@ -20,8 +21,10 @@ export const CourseTrayItem = ({
   ratingAmount,
   tags,
   level,
+  href,
 }) => {
   const theme = useTheme();
+  const navigate = useNavigate();
 
   return (
     <Card
@@ -31,7 +34,9 @@ export const CourseTrayItem = ({
         height: "282px",
         border: 0,
         boxShadow: "4px 4px 20px -4px rgba(66, 68, 90, 1)",
+        cursor: "pointer",
       }}
+      onClick={() => navigate(href)}
     >
       <img
         src={image || placeholder}

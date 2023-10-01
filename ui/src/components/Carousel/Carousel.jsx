@@ -10,6 +10,9 @@ import {
 import "pure-react-carousel/dist/react-carousel.es.css";
 import PropTypes from "prop-types";
 
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
 export default function Carousel({
   showTitle,
   carouselTitle,
