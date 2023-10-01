@@ -31,7 +31,7 @@ class Project(Base):
     created_at: Mapped[str] = mapped_column(DateTime, default=datetime.now())
 
 
-class Courses(Base):
+class Course(Base):
     __tablename__ = "courses"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True)
@@ -40,5 +40,6 @@ class Courses(Base):
     author: Mapped[str] = mapped_column(String)
     rating: Mapped[float] = mapped_column(Float)
     rating_count: Mapped[int] = mapped_column(Integer)
-    tags: List[str] = mapped_column(PickleType)
+    tags: Mapped[List[str]] = mapped_column(PickleType)
     level: Mapped[int] = mapped_column(Integer)
+    created_at: Mapped[str] = mapped_column(DateTime, default=datetime.now())
