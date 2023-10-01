@@ -12,7 +12,11 @@ export const Courses = () => {
   const openQuiz = () => {
     setClicked(true);
   };
-  
+
+  const closeQuiz = () => {
+    setClicked(false);
+  };
+
   return (
     <div>
       <Suggestion>
@@ -34,8 +38,12 @@ export const Courses = () => {
             spersonalizowane rekomendacje, które pomogą Ci wybrać technologiczną
             przygodę na miarę Twoich pasji i talentów.
           </Typography>
-          <Button variant="contained" onClick={openQuiz}>Wypełnij ankietę</Button>
-          <Dialog open={clicked}><Quiz/></Dialog>
+          <Button variant="contained" onClick={openQuiz}>
+            Wypełnij ankietę
+          </Button>
+          <Dialog open={clicked} onBackdropClick={closeQuiz}>
+            <Quiz />
+          </Dialog>
         </div>
       </Suggestion>
       <CourseTray title={"Frontend"} courses={[1, 2, 3, 4]} />

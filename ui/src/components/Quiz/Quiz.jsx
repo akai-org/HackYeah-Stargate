@@ -22,11 +22,16 @@ function Quiz() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    if (question === quizData.questionData.length - 1)
+    if (question >= quizData.questionData.length - 1)
       setTimeout(() => {
         setOpen(true);
       }, 3000);
   }, [question]);
+
+const closeResult = () => {
+  setOpen(false);
+  setQuestion(0);
+}
 
   return (
     <div className={styles.quiz}>
@@ -61,7 +66,7 @@ function Quiz() {
         </ButtonNext>
       </CarouselProvider>
 
-      <Dialog open={open} className={styles.dialog}>
+      <Dialog open={open} className={styles.dialog} onBackdropClick={closeResult}>
         <DialogTitle>
           <img
             src={`${quizData.dialogImage}.png`}
