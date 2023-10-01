@@ -28,7 +28,7 @@ export default function Carousel({
       isPlaying={isPlaying}
       infinite={true}
     >
-      {showTitle&&<h2>{carouselTitle}</h2>}
+      {showTitle && <h2>{carouselTitle}</h2>}
       <Slider>
         {slidesData.map((item, index) => (
           <>
@@ -41,7 +41,7 @@ export default function Carousel({
             >
               <Card
                 variant="outlined"
-                sx={{ margin: "10rem 30rem 10rem 5rem", maxWidth: "40%" }}
+                sx={{ margin: "17rem 30rem 17rem 5rem", maxWidth: "40%" }}
               >
                 <CardHeader title={item.title} />
                 <CardContent>{item.content}</CardContent>
@@ -51,8 +51,8 @@ export default function Carousel({
         ))}
       </Slider>
       {dots && <DotGroup />}
-      {buttons && <ButtonBack>Back</ButtonBack> && (
-        <ButtonNext>Next</ButtonNext>
+      {buttons && <ButtonBack>{"<"}</ButtonBack> && (
+        <ButtonNext>{">"}</ButtonNext>
       )}
     </CarouselProvider>
   );
