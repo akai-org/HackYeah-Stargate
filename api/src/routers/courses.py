@@ -1,8 +1,8 @@
 from fastapi import APIRouter, Depends, HTTPException
 from typing import List
 from sqlalchemy.orm import Session
-from . import models, schemas, crud
-from .database import get_db
+from .. import models, schemas, crud
+from ..database import get_db
 
 router = APIRouter(prefix="/courses", tags=["courses"])
 
@@ -30,6 +30,6 @@ def create_course(course: schemas.CourseCreate, db: Session = Depends(get_db)):
     return crud.create_course(db=db, course=course)
 
 
-@router.delete("/{project_id}")
-def delete_project(db: Session = Depends(get_db), project_id: int = 1):
-    return crud.delete_project(db=db, project_id=project_id)
+@router.delete("/{course_id}")
+def delete_course(db: Session = Depends(get_db), course_id: int = 1):
+    return crud.delete_course(db=db, course_id=course_id)

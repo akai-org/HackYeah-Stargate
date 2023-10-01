@@ -43,3 +43,15 @@ class Course(Base):
     tags: Mapped[List[str]] = mapped_column(PickleType)
     level: Mapped[int] = mapped_column(Integer)
     created_at: Mapped[str] = mapped_column(DateTime, default=datetime.now())
+
+
+class Hackathon(Base):
+    __tablename__ = "hackathons"
+
+    id: Mapped[int] = mapped_column(Integer, primary_key=True)
+    title: Mapped[str] = mapped_column(String)
+    description: Mapped[str] = mapped_column(String)
+    long_description: Mapped[str] = mapped_column(String)
+    photo: Mapped[str] = mapped_column(String)
+    tags: Mapped[List[str]] = mapped_column(PickleType)
+    created_at: Mapped[str] = mapped_column(DateTime, default=datetime.now())

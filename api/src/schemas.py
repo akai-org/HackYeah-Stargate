@@ -52,3 +52,20 @@ class CourseOut(Course):
     rating_count: int
     tags: List[str]
     created_at: datetime
+
+
+class Hackathon(BaseModel):
+    title: str
+    description: str
+    long_description: str = None
+    photo: str = None
+    tags: List[str] = None
+
+
+class HackathonCreate(Hackathon):
+    pass
+
+
+class HackathonOut(Hackathon):
+    id: int
+    created_at: datetime
