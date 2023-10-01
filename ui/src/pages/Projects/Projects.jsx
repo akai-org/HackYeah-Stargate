@@ -6,7 +6,7 @@ import {ProjectCard} from "../../components/Cards/ProjectCard/ProjectCard.jsx";
 export function Projects() {
     const projects = useLoaderData();
     return (
-        <Stack gap="20px" padding="20px">
+        <Stack gap="20px" padding="20px" direction="row">
             {projects.map((params) => <ProjectCard key={params.id} {...params} />)}
         </Stack>
     )
