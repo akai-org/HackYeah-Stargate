@@ -7,7 +7,6 @@ import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import {useNavigate} from "react-router-dom";
-import AdbIcon from '@mui/icons-material/Adb';
 import {Button} from "@mui/material";
 
 const links = [
@@ -21,12 +20,11 @@ export function CustomAppBar() {
     return <AppBar position="static">
         <Container maxWidth="xl">
             <Toolbar disableGutters>
-                <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
                 <Typography
                     variant="h6"
                     noWrap
                     component="a"
-                    href="#app-bar-with-responsive-menu"
+                    href="/"
                     sx={{
                         mr: 2,
                         display: { xs: 'none', md: 'flex' },
@@ -37,15 +35,14 @@ export function CustomAppBar() {
                         textDecoration: 'none',
                     }}
                 >
-                    LOGO
+                    StarGate
                 </Typography>
 
-                <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                 <Typography
                     variant="h5"
                     noWrap
                     component="a"
-                    href="#app-bar-with-responsive-menu"
+                    href="/"
                     sx={{
                         mr: 2,
                         display: { xs: 'flex', md: 'none' },
@@ -57,7 +54,7 @@ export function CustomAppBar() {
                         textDecoration: 'none',
                     }}
                 >
-                    LOGO
+                    StarGate
                 </Typography>
                 <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' },
                     justifyContent: 'flex-end', gap: '20px', paddingRight: '20px' }}>
