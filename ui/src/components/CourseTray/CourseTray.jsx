@@ -45,6 +45,7 @@ export const CourseTray = ({ title, courses, withButton = true }) => {
             ratingAmount={2500}
             tags={["python", "js", "canva"]}
             level={0}
+            href={`/courses/${el}`}
           />
         ))}
       </div>
