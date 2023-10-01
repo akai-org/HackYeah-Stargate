@@ -1,8 +1,10 @@
 from fastapi import FastAPI
+from sqlalchemy.orm import Session
 from fastapi.middleware.cors import CORSMiddleware
 from .add_data import populate_all
-from .database import create_all
+from .database import create_all, engine
 from .routers import projects, users, courses, hackathons
+from .crud import get_users
 
 app = FastAPI()
 
@@ -27,14 +29,11 @@ app.include_router(hackathons.router)
 @app.on_event("startup")
 def startup_event():
     create_all()
+    with Session(engine) as session:
+        if not get_users(session):
+            populate_all()
 
 
 @app.get("/")
 def main():
     return {"message": "Hello World!"}
-
-
-@app.get("/populate")
-def populate():
-    populate_all()
-    return {"message": "Populated!"}
