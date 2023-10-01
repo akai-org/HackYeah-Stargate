@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .database import create_all
-from . import projects, users
+from . import projects, users, courses
 
 app = FastAPI()
 
@@ -20,6 +20,7 @@ app.add_middleware(
 
 app.include_router(projects.router)
 app.include_router(users.router)
+app.include_router(courses.router)
 
 @app.on_event("startup")
 def startup_event():
