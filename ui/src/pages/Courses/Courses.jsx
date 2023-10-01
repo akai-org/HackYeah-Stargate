@@ -1,11 +1,18 @@
 import { CourseTray } from "../../components/CourseTray/CourseTray";
 import { Suggestion } from "../../components/commons/Suggestion/Suggestion";
-import { Typography, Button } from "@mui/material";
+import { Typography, Button, Dialog } from "@mui/material";
 
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import Quiz from "../../components/Quiz/Quiz";
+import { useState } from "react";
 
 export const Courses = () => {
+  const [clicked, setClicked] = useState(false);
+  const openQuiz = () => {
+    setClicked(true);
+  };
+  
   return (
     <div>
       <Suggestion>
@@ -27,7 +34,8 @@ export const Courses = () => {
             spersonalizowane rekomendacje, które pomogą Ci wybrać technologiczną
             przygodę na miarę Twoich pasji i talentów.
           </Typography>
-          <Button variant="contained">Wypełnij ankietę</Button>
+          <Button variant="contained" onClick={openQuiz}>Wypełnij ankietę</Button>
+          <Dialog open={clicked}><Quiz/></Dialog>
         </div>
       </Suggestion>
       <CourseTray title={"Frontend"} courses={[1, 2, 3, 4]} />

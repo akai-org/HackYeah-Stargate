@@ -46,7 +46,7 @@ function Quiz() {
             </Slide>
           ))}
         </Slider>
-        <DotGroup/>
+        <DotGroup />
         <ButtonNext
           onClick={() => setQuestion(question + 1)}
           style={{ margin: "2rem", padding: "1em" }}
