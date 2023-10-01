@@ -4,7 +4,7 @@ import { CourseTrayItem } from "./CourseTrayItem";
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
-export const CourseTray = ({ title, courses }) => {
+export const CourseTray = ({ title, courses, withButton = true }) => {
   const limitedCourses = courses.slice(0, 4);
 
   return (
@@ -48,16 +48,18 @@ export const CourseTray = ({ title, courses }) => {
           />
         ))}
       </div>
-      <div
-        css={css`
-          display: flex;
-          justify-content: flex-end;
-        `}
-      >
-        <Button variant="text" sx={{ marginTop: "20px" }}>
-          Zobacz więcej
-        </Button>
-      </div>
+      {withButton && (
+        <div
+          css={css`
+            display: flex;
+            justify-content: flex-end;
+          `}
+        >
+          <Button variant="text" sx={{ marginTop: "20px" }}>
+            Zobacz więcej
+          </Button>
+        </div>
+      )}
     </Box>
   );
 };
