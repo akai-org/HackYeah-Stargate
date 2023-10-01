@@ -41,7 +41,7 @@ export default function Carousel({
             >
               <Card
                 variant="outlined"
-                sx={{ margin: "10rem 30rem 10rem 5rem", maxWidth: "40%" }}
+                sx={{ margin: "17rem 30rem 17rem 5rem", maxWidth: "40%" }}
               >
                 <CardHeader title={item.title} />
                 <CardContent>{item.content}</CardContent>
